@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     MODEL_PATH: str = "/app/saved_models/lightfm_model.pkl"
     CELERY_BROKER_URL: str = "redis://redis:6379/1"
     CELERY_RESULT_BACKEND: str = "redis://redis:6379/2"
+    DEMO_AUTH_BYPASS_ENABLED: bool = True
+    DEMO_LOGIN_EMAILS: str = "admin@example.com,student@example.com"
+    DEMO_SIGNUP_EMAIL_DOMAIN: str = "demo.local"
 
     class Config:
         env_file = ".env"

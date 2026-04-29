@@ -6,7 +6,7 @@ import SkillBadge from '../components/SkillBadge';
 import AuthToast from '../components/AuthToast';
 import { getApiErrorMessage } from '../utils/errors';
 
-const TOPICS = ['python', 'javascript', 'data-science', 'web-development', 'machine-learning'];
+const TOPICS = ['python', 'javascript', 'java', 'cpp', 'go', 'rust', 'typescript', 'sql', 'kotlin', 'swift', 'data-science', 'web-development', 'machine-learning'];
 const STREAK_MILESTONES = [7, 30, 100, 365, 500];
 const SAMPLE_HOURS = [1.2, 0.9, 1.6, 2.1, 1.4, 2.7, 1.9];
 

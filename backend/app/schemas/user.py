@@ -59,6 +59,45 @@ class UserLogin(BaseModel):
         return value.strip().lower()
 
 
+class OTPVerify(BaseModel):
+    email: str = Field(..., min_length=5, max_length=255)
+    otp: str = Field(..., min_length=4, max_length=12)
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: str) -> str:
+        email = value.strip().lower()
+        if "@" not in email:
+            raise ValueError("Enter a valid email address")
+        return email
+
+    @field_validator("otp")
+    @classmethod
+    def normalize_otp(cls, value: str) -> str:
+        otp = value.strip()
+        if not otp.isdigit():
+            raise ValueError("OTP must contain digits only")
+        return otp
+
+
+class OTPResend(BaseModel):
+    email: str = Field(..., min_length=5, max_length=255)
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: str) -> str:
+        email = value.strip().lower()
+        if "@" not in email:
+            raise ValueError("Enter a valid email address")
+        return email
+
+
+class OTPChallenge(BaseModel):
+    message: str
+    email: str
+    requires_otp: bool = True
+
+
 class UserOut(BaseModel):
     id: int
     email: str
@@ -68,6 +107,7 @@ class UserOut(BaseModel):
     learning_goals: List[str]
     is_active: bool
     is_admin: bool
+    is_verified: bool
     created_at: datetime
     updated_at: Optional[datetime] = None
 

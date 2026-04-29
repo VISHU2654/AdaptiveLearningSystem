@@ -23,6 +23,11 @@ class User(Base):
     learning_goals = Column(JSON, server_default="[]", nullable=False)
     is_active = Column(Boolean, server_default="true", nullable=False)
     is_admin = Column(Boolean, server_default="false", nullable=False)
+    is_verified = Column(Boolean, server_default="false", nullable=False)
+    otp_code = Column(String(255), nullable=True)
+    otp_expires_at = Column(DateTime(timezone=True), nullable=True)
+    otp_purpose = Column(String(50), nullable=True)
+    last_login_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )

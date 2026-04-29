@@ -55,7 +55,49 @@ docker-compose up --build
 | Admin   | admin@example.com    | admin123    |
 | Student | student@example.com  | student123  |
 
-## 🧠 ML Recommendation Engine
+Demo login buttons bypass OTP only while `DEMO_AUTH_BYPASS_ENABLED=true`, so demos keep working even before SMTP is configured. Real signups and real logins still require email OTP.
+
+### Email OTP Configuration
+
+Email sender settings are configured inside the app, not in `.env`.
+
+1. Start the app.
+2. Click `Admin demo` on the login page.
+3. Open the user menu, then `Settings`.
+4. Enter the SMTP sender details and save. The app sends a test email immediately.
+5. For production, set `DEMO_AUTH_BYPASS_ENABLED=false`, change `SECRET_KEY`, and restart the containers.
+
+For Gmail, use a Google App Password instead of your normal account password. Registration sends an email verification OTP. Login verifies the password first, then sends a login OTP and issues the JWT only after the OTP is verified. OTPs are stored as bcrypt hashes and expire after 10 minutes.
+
+Demo controls are intentionally separate:
+- `Student demo` / `Admin demo` login use seeded demo accounts and skip OTP only for allowlisted emails in `DEMO_LOGIN_EMAILS`.
+- `Continue as demo learner` on signup creates a temporary verified demo learner with a `@demo.local` address.
+- Turn `DEMO_AUTH_BYPASS_ENABLED` off before using real users.
+
+## Public Deployment
+
+Vercel can host the React/Vite frontend. This app's backend also needs a public FastAPI service plus PostgreSQL and Redis, so do not deploy only the frontend or users will see the site but login, signup, OTP, recommendations, and settings will fail.
+
+Recommended setup:
+
+1. Deploy the backend Docker app to a backend host such as Render, Railway, Fly.io, or a VPS.
+2. Attach managed PostgreSQL and Redis to that backend.
+3. Set backend environment variables:
+   - `DATABASE_URL`
+   - `SYNC_DATABASE_URL`
+   - `REDIS_URL`
+   - `SECRET_KEY`
+   - `DEMO_AUTH_BYPASS_ENABLED=false`
+4. Open the backend URL and confirm `/health` works.
+5. Deploy `frontend/` to Vercel.
+6. In Vercel project settings, add:
+   - `VITE_API_BASE_URL=https://your-backend-url`
+7. Redeploy the frontend after adding the environment variable.
+8. Open the Vercel link, sign in as admin, configure the email sender, and send the test email.
+
+When deploying from GitHub to Vercel, set the Vercel Root Directory to `frontend`, Build Command to `npm run build`, and Output Directory to `dist`.
+
+## ML Recommendation Engine
 
 The system uses **LightFM** with Weighted Approximate-Rank Pairwise (WARP) loss:
 
@@ -120,7 +162,10 @@ AdaptiveLearningSystem/
 
 ### Authentication
 - `POST /api/v1/auth/register` — Create account
-- `POST /api/v1/auth/login` — Get JWT token
+- `POST /api/v1/auth/demo-register` — Create a temporary verified demo account
+- `POST /api/v1/auth/verify-otp` — Verify registration or login OTP and get JWT token
+- `POST /api/v1/auth/resend-otp` — Resend registration OTP
+- `POST /api/v1/auth/login` — Verify password and send login OTP
 - `GET /api/v1/auth/me` — Current user profile
 - `PATCH /api/v1/auth/me` — Update profile
 

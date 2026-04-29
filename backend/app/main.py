@@ -17,6 +17,7 @@ from app.api.routes.users import router as users_router
 from app.api.routes.content import router as content_router
 from app.api.routes.interactions import router as interactions_router
 from app.api.routes.recommendations import router as recommendations_router
+from app.api.routes.settings import router as settings_router
 
 
 @asynccontextmanager
@@ -86,6 +87,7 @@ app.include_router(users_router)
 app.include_router(content_router)
 app.include_router(interactions_router)
 app.include_router(recommendations_router)
+app.include_router(settings_router)
 
 
 @app.get("/health", tags=["Health"])

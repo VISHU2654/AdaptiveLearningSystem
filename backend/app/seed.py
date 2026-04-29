@@ -176,7 +176,203 @@ SAMPLE_CONTENT = [
         "prerequisites": [8, 4],
         "duration_minutes": 180,
         "author": "Prof. Andrew Ng Jr."
-    }
+    },
+
+    # Java
+    {
+        "title": "Java Fundamentals: Getting Started",
+        "description": "Learn Java basics including variables, data types, control flow, and object-oriented programming concepts.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["java"],
+        "skills_taught": ["java-basics", "oop", "syntax"],
+        "learning_objectives": ["Write basic Java programs", "Understand OOP fundamentals"],
+        "prerequisites": [],
+        "duration_minutes": 60,
+        "author": "Dr. Sarah Chen"
+    },
+    {
+        "title": "Java Collections Framework",
+        "description": "Master Lists, Sets, Maps, and Queues in Java for efficient data management.",
+        "content_type": "article",
+        "difficulty": "intermediate",
+        "topics": ["java"],
+        "skills_taught": ["collections", "generics", "data-structures"],
+        "learning_objectives": ["Use ArrayList and HashMap", "Implement custom comparators"],
+        "prerequisites": [10],
+        "duration_minutes": 45,
+        "author": "Prof. James Miller"
+    },
+    {
+        "title": "Spring Boot REST API Development",
+        "description": "Build production-ready REST APIs with Spring Boot, including authentication and database integration.",
+        "content_type": "project",
+        "difficulty": "advanced",
+        "topics": ["java"],
+        "skills_taught": ["spring-boot", "rest-api", "jpa"],
+        "learning_objectives": ["Create REST endpoints", "Implement Spring Security"],
+        "prerequisites": [11],
+        "duration_minutes": 150,
+        "author": "Emily Zhang"
+    },
+
+    # C++
+    {
+        "title": "C++ Basics: Syntax and Pointers",
+        "description": "Get started with C++ programming — variables, pointers, references, and memory management basics.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["cpp"],
+        "skills_taught": ["cpp-syntax", "pointers", "memory"],
+        "learning_objectives": ["Declare and use pointers", "Understand stack vs heap"],
+        "prerequisites": [],
+        "duration_minutes": 55,
+        "author": "Mark Thompson"
+    },
+    {
+        "title": "C++ Object-Oriented Programming",
+        "description": "Deep dive into classes, inheritance, polymorphism, and operator overloading in C++.",
+        "content_type": "exercise",
+        "difficulty": "intermediate",
+        "topics": ["cpp"],
+        "skills_taught": ["oop", "inheritance", "polymorphism"],
+        "learning_objectives": ["Implement class hierarchies", "Use virtual functions"],
+        "prerequisites": [13],
+        "duration_minutes": 70,
+        "author": "Prof. James Miller"
+    },
+
+    # Go
+    {
+        "title": "Go Programming: From Zero to Hero",
+        "description": "Learn Go from scratch — syntax, goroutines, channels, and building concurrent applications.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["go"],
+        "skills_taught": ["go-basics", "goroutines", "channels"],
+        "learning_objectives": ["Write Go programs", "Implement concurrency patterns"],
+        "prerequisites": [],
+        "duration_minutes": 65,
+        "author": "Dr. Maria Rodriguez"
+    },
+    {
+        "title": "Building Web Services with Go",
+        "description": "Create high-performance REST APIs and microservices using Go's standard library and popular frameworks.",
+        "content_type": "project",
+        "difficulty": "intermediate",
+        "topics": ["go"],
+        "skills_taught": ["web-services", "http", "json"],
+        "learning_objectives": ["Build HTTP servers", "Handle JSON request/response"],
+        "prerequisites": [15],
+        "duration_minutes": 90,
+        "author": "Mark Thompson"
+    },
+
+    # Rust
+    {
+        "title": "Rust Essentials: Ownership and Borrowing",
+        "description": "Understand Rust's unique ownership system, borrowing rules, and lifetimes for memory-safe programming.",
+        "content_type": "video",
+        "difficulty": "intermediate",
+        "topics": ["rust"],
+        "skills_taught": ["ownership", "borrowing", "lifetimes"],
+        "learning_objectives": ["Manage ownership transfers", "Apply borrowing rules"],
+        "prerequisites": [],
+        "duration_minutes": 80,
+        "author": "Prof. Andrew Ng Jr."
+    },
+    {
+        "title": "Systems Programming with Rust",
+        "description": "Build performant systems software with Rust — CLI tools, file I/O, and error handling patterns.",
+        "content_type": "project",
+        "difficulty": "advanced",
+        "topics": ["rust"],
+        "skills_taught": ["systems-programming", "error-handling", "cli"],
+        "learning_objectives": ["Build CLI applications", "Implement robust error handling"],
+        "prerequisites": [17],
+        "duration_minutes": 120,
+        "author": "Emily Zhang"
+    },
+
+    # TypeScript
+    {
+        "title": "TypeScript Fundamentals",
+        "description": "Add static typing to your JavaScript projects with TypeScript — types, interfaces, and generics.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["typescript", "javascript"],
+        "skills_taught": ["type-annotations", "interfaces", "generics"],
+        "learning_objectives": ["Define types and interfaces", "Use generics effectively"],
+        "prerequisites": [5],
+        "duration_minutes": 50,
+        "author": "Emily Zhang"
+    },
+    {
+        "title": "Full-Stack TypeScript with React",
+        "description": "Build type-safe full-stack applications using TypeScript with React frontend and Node.js backend.",
+        "content_type": "project",
+        "difficulty": "intermediate",
+        "topics": ["typescript", "web-development"],
+        "skills_taught": ["react-ts", "node-ts", "full-stack"],
+        "learning_objectives": ["Build React apps with TypeScript", "Create typed APIs"],
+        "prerequisites": [19],
+        "duration_minutes": 140,
+        "author": "Mark Thompson"
+    },
+
+    # SQL
+    {
+        "title": "SQL Fundamentals: Querying Databases",
+        "description": "Learn to write SQL queries — SELECT, WHERE, JOIN, GROUP BY, and subqueries for data retrieval.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["sql", "data-science"],
+        "skills_taught": ["sql-queries", "joins", "aggregations"],
+        "learning_objectives": ["Write complex SQL queries", "Perform data aggregations"],
+        "prerequisites": [],
+        "duration_minutes": 40,
+        "author": "Dr. Maria Rodriguez"
+    },
+    {
+        "title": "Database Design and Optimization",
+        "description": "Learn normalization, indexing strategies, and query optimization for production databases.",
+        "content_type": "article",
+        "difficulty": "advanced",
+        "topics": ["sql"],
+        "skills_taught": ["normalization", "indexing", "optimization"],
+        "learning_objectives": ["Design normalized schemas", "Optimize slow queries"],
+        "prerequisites": [21],
+        "duration_minutes": 60,
+        "author": "Prof. James Miller"
+    },
+
+    # Kotlin
+    {
+        "title": "Kotlin for Android Development",
+        "description": "Get started with Kotlin — modern syntax, null safety, coroutines, and building Android apps.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["kotlin"],
+        "skills_taught": ["kotlin-basics", "null-safety", "coroutines"],
+        "learning_objectives": ["Write Kotlin programs", "Understand null safety"],
+        "prerequisites": [],
+        "duration_minutes": 55,
+        "author": "Dr. Sarah Chen"
+    },
+
+    # Swift
+    {
+        "title": "Swift and SwiftUI Basics",
+        "description": "Learn Swift programming and build iOS interfaces with SwiftUI — optionals, closures, and declarative UI.",
+        "content_type": "video",
+        "difficulty": "beginner",
+        "topics": ["swift"],
+        "skills_taught": ["swift-basics", "swiftui", "optionals"],
+        "learning_objectives": ["Build SwiftUI views", "Handle optionals safely"],
+        "prerequisites": [],
+        "duration_minutes": 50,
+        "author": "Emily Zhang"
+    },
 ]
 
 
@@ -235,6 +431,7 @@ async def seed_database(db: AsyncSession) -> None:
             preferred_topics=user_data["preferred_topics"],
             learning_goals=user_data["learning_goals"],
             is_admin=user_data["is_admin"],
+            is_verified=True,
         )
         db.add(user)
         users.append(user)

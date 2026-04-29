@@ -22,6 +22,7 @@ if database_url:
 from app.models.user import Base as UserBase  # noqa: E402,F401
 from app.models.content import Base as ContentBase  # noqa: E402,F401
 from app.models.interaction import Base as InteractionBase  # noqa: E402,F401
+from app.models.platform_config import Base as PlatformConfigBase  # noqa: E402,F401
 from app.database import Base  # noqa: E402
 
 target_metadata = Base.metadata

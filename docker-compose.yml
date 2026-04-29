@@ -53,6 +53,9 @@ services:
       SYNC_DATABASE_URL: ${SYNC_DATABASE_URL}
       REDIS_URL: ${REDIS_URL}
       SECRET_KEY: ${SECRET_KEY}
+      DEMO_AUTH_BYPASS_ENABLED: ${DEMO_AUTH_BYPASS_ENABLED:-true}
+      DEMO_LOGIN_EMAILS: ${DEMO_LOGIN_EMAILS:-admin@example.com,student@example.com}
+      DEMO_SIGNUP_EMAIL_DOMAIN: ${DEMO_SIGNUP_EMAIL_DOMAIN:-demo.local}
     depends_on:
       postgres:
         condition: service_healthy
@@ -78,6 +81,9 @@ services:
       SYNC_DATABASE_URL: ${SYNC_DATABASE_URL}
       REDIS_URL: ${REDIS_URL}
       SECRET_KEY: ${SECRET_KEY}
+      DEMO_AUTH_BYPASS_ENABLED: ${DEMO_AUTH_BYPASS_ENABLED:-true}
+      DEMO_LOGIN_EMAILS: ${DEMO_LOGIN_EMAILS:-admin@example.com,student@example.com}
+      DEMO_SIGNUP_EMAIL_DOMAIN: ${DEMO_SIGNUP_EMAIL_DOMAIN:-demo.local}
     depends_on:
       postgres:
         condition: service_healthy
