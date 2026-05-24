@@ -15,7 +15,7 @@ function LearningSidebar({ searchTerm, onSearchChange, plan, onPlanChange, onSur
 
   return (
     <>
-    <aside className="fixed left-0 top-16 z-40 hidden h-[calc(100vh-4rem)] w-72 border-r border-white/10 bg-slate-950/60 px-4 py-5 backdrop-blur-2xl lg:block">
+    <aside id="learning-sidebar" className="fixed left-0 top-16 z-40 hidden h-[calc(100vh-4rem)] w-72 border-r border-white/10 bg-slate-950/60 px-4 py-5 backdrop-blur-2xl lg:block">
       <div className="space-y-5">
         <div>
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Search</p>

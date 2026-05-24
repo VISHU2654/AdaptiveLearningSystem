@@ -294,6 +294,7 @@ function LearningChatbot() {
   return (
     <>
       <button
+        id="chatbot-button"
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="fixed bottom-5 right-5 z-[70] flex h-14 w-14 items-center justify-center rounded-2xl border border-accent-300/30 bg-accent-300 text-slate-950 shadow-2xl shadow-cyan-950/40 transition-transform hover:-translate-y-1"

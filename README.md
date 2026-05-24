@@ -47,6 +47,7 @@ docker-compose up --build
 | Frontend      | http://localhost:5173         |
 | API Docs      | http://localhost:8000/docs    |
 | Health Check  | http://localhost:8000/health  |
+| Live frontend | https://frontend-tau-beryl-45.vercel.app/login |
 
 ### Demo Credentials
 
@@ -76,7 +77,11 @@ Demo controls are intentionally separate:
 
 ## Public Deployment
 
-Vercel can host the React/Vite frontend. This app's backend also needs a public FastAPI service plus PostgreSQL and Redis, so do not deploy only the frontend or users will see the site but login, signup, OTP, recommendations, and settings will fail.
+The React/Vite frontend is deployed on Vercel:
+
+https://frontend-tau-beryl-45.vercel.app/login
+
+Current deployment status: the Vercel link serves the frontend. The backend still needs to be moved from local Docker to a public cloud backend before real users can sign up, log in, receive OTP emails, use recommendations, or save admin settings from the Vercel site.
 
 Recommended setup:
 
@@ -96,6 +101,17 @@ Recommended setup:
 8. Open the Vercel link, sign in as admin, configure the email sender, and send the test email.
 
 When deploying from GitHub to Vercel, set the Vercel Root Directory to `frontend`, Build Command to `npm run build`, and Output Directory to `dist`.
+
+Future improvements:
+
+- Host the FastAPI backend on Render, Railway, Fly.io, or a VPS.
+- Use managed PostgreSQL for user, content, OTP, and platform settings data.
+- Use managed Redis for Celery and background recommendation training jobs.
+- Add the hosted backend URL to Vercel as `VITE_API_BASE_URL`.
+- Add a production domain name instead of the generated Vercel URL.
+- Disable demo bypass with `DEMO_AUTH_BYPASS_ENABLED=false`.
+- Add monitoring, error logs, and uptime checks for the API.
+- Add database backups before onboarding real users.
 
 ## ML Recommendation Engine
 

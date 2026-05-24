@@ -45,6 +45,7 @@ function DashboardPage({ searchTerm = '', plan = 'free', surpriseTick = 0, onSta
   return (
     <div className="mx-auto max-w-7xl px-4 pb-12 pt-44 sm:px-6 lg:ml-72 lg:px-8 lg:pt-20">
       <motion.div
+        id="dashboard-welcome"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.42, ease: 'easeOut' }}

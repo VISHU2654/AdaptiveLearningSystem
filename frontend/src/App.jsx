@@ -12,6 +12,7 @@ import LearningSidebar from './components/LearningSidebar';
 import CoursePlayerModal from './components/CoursePlayerModal';
 import LearningChatbot from './components/LearningChatbot';
 import useAuthStore from './store/authStore';
+import ProductTour from './components/ProductTour';
 
 function AppShell({ token }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -86,6 +87,7 @@ function AppShell({ token }) {
       </Routes>
 
       {token && <LearningChatbot />}
+      {token && <ProductTour />}
       <CoursePlayerModal
         course={activeCourse}
         plan={plan}
