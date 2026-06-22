@@ -44,9 +44,10 @@ docker-compose up --build
 
 | Service       | URL                          |
 |---------------|------------------------------|
-| Frontend      | http://localhost:5173         |
-| API Docs      | http://localhost:8000/docs    |
-| Health Check  | http://localhost:8000/health  |
+| React Frontend| http://localhost:5173        |
+| Streamlit App | http://localhost:8501        |
+| API Docs      | http://localhost:8000/docs   |
+| Health Check  | http://localhost:8000/health |
 | Live frontend | https://frontend-tau-beryl-45.vercel.app/login |
 
 ### Demo Credentials

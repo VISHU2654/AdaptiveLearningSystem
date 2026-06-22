@@ -110,6 +110,21 @@ services:
     networks:
       - app-network
 
+  streamlit_frontend:
+    build:
+      context: ./streamlit_app
+      dockerfile: Dockerfile
+    container_name: als_streamlit_frontend
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit_app:/app
+    depends_on:
+      - api
+    networks:
+      - app-network
+
 volumes:
   postgres-data:
   model-data:
