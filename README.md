@@ -28,6 +28,17 @@ A production-ready, full-stack **Adaptive Learning Recommendation System** that 
 - **Beautiful Dark UI** — Modern React frontend with glassmorphism and micro-animations
 - **Auto-seeding** — Database populates with sample data on first startup
 
+## 📸 Screenshots
+
+*(To display your screenshots here, save your image files as `docs/screenshots/dashboard.png` and `docs/screenshots/login.png` in your repository and push them to GitHub!)*
+
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" width="800" alt="Adaptive Learning Dashboard">
+</p>
+<p align="center">
+  <img src="docs/screenshots/login.png" width="800" alt="Secure OTP Login">
+</p>
+
 ## 🚀 Quick Start
 
 ### Prerequisites
