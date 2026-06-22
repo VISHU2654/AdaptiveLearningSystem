@@ -132,7 +132,7 @@ else:
             if not recs:
                 st.info("No recommendations yet. Interact with some content!")
             else:
-                for r in recs:
+                for r in recs.get("recommendations", []):
                     st.write(f"**{r.get('title')}**")
                     st.write(str(r.get('description', '')))
                     st.markdown("---")
@@ -152,7 +152,8 @@ else:
                         st.image(c["thumbnail_url"], width=300)
                     
                     st.write(c.get("description", ""))
-                    st.write(f"**Topic**: {c.get('topic')} | **Level**: {c.get('difficulty_level')}")
+                    topics_str = ", ".join(c.get('topics', []))
+                    st.write(f"**Topic**: {topics_str} | **Level**: {c.get('difficulty', 'Unknown').title()}")
                     
                     if c.get("content_type") == "video" and c.get("video_url"):
                         st.video(c["video_url"])
