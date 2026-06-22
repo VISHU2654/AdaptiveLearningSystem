@@ -1,8 +1,9 @@
 import streamlit as st
 import requests
 import json
+import os
 
-API_URL = "http://api:8000/api/v1"
+API_URL = os.environ.get("API_URL", "http://api:8000/api/v1")
 
 st.set_page_config(page_title="Adaptive Learning System", page_icon="🎓", layout="wide")
 

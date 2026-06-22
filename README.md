@@ -82,6 +82,16 @@ The React/Vite frontend is deployed on Vercel:
 
 https://frontend-tau-beryl-45.vercel.app/login
 
+### Streamlit Community Cloud Deployment
+To deploy the new Streamlit frontend to [Streamlit Community Cloud](https://share.streamlit.io/):
+1. Connect your GitHub repository.
+2. Set the **Main file path** to `streamlit_app/app.py`.
+3. In the **Advanced Settings** -> **Secrets**, add your live backend URL (if you have deployed your backend):
+   ```toml
+   API_URL = "https://your-live-backend.com/api/v1"
+   ```
+   *(Note: The Streamlit app requires a running FastAPI backend and Database to handle logins and data. Streamlit Cloud only hosts the frontend UI.)*
+
 Current deployment status: the Vercel link serves the frontend. The backend still needs to be moved from local Docker to a public cloud backend before real users can sign up, log in, receive OTP emails, use recommendations, or save admin settings from the Vercel site.
 
 Recommended setup:
