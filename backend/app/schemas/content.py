@@ -14,6 +14,8 @@ class ContentCreate(BaseModel):
     learning_objectives: List[str] = Field(default_factory=list)
     duration_minutes: Optional[int] = None
     author: Optional[str] = None
+    video_url: Optional[str] = None
+    thumbnail_url: Optional[str] = None
 
 
 class ContentOut(BaseModel):
@@ -28,6 +30,8 @@ class ContentOut(BaseModel):
     learning_objectives: List[str] = Field(default_factory=list)
     duration_minutes: Optional[int] = None
     author: Optional[str] = None
+    video_url: Optional[str] = None
+    thumbnail_url: Optional[str] = None
     rating: float
     is_published: bool
     created_at: datetime

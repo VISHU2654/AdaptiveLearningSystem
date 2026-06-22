@@ -26,6 +26,8 @@ class Content(Base):
     learning_objectives = Column(JSON, server_default="[]", nullable=False)  # list of objective strings
     duration_minutes = Column(Integer, nullable=True)
     author = Column(String(255), nullable=True)
+    video_url = Column(String(1000), nullable=True)
+    thumbnail_url = Column(String(1000), nullable=True)
     rating = Column(Float, server_default="0.0", nullable=False)
     is_published = Column(Boolean, server_default="true", nullable=False)
     created_at = Column(

@@ -148,8 +148,15 @@ else:
             content = content_resp.json()
             for c in content:
                 with st.expander(c["title"]):
+                    if c.get("thumbnail_url"):
+                        st.image(c["thumbnail_url"], width=300)
+                    
                     st.write(c.get("description", ""))
                     st.write(f"**Topic**: {c.get('topic')} | **Level**: {c.get('difficulty_level')}")
+                    
+                    if c.get("content_type") == "video" and c.get("video_url"):
+                        st.video(c["video_url"])
+                        
                     col1, col2, col3 = st.columns(3)
                     if col1.button("View", key=f"v_{c['id']}"):
                         requests.post(f"{API_URL}/interactions/", json={"content_id": c["id"], "interaction_type": "view"}, headers=get_headers())

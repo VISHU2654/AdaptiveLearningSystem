@@ -73,7 +73,9 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Understand Python variables", "Manipulate basic data types"],
         "prerequisites": [],
         "duration_minutes": 45,
-        "author": "Dr. Sarah Chen"
+        "author": "Dr. Sarah Chen",
+        "video_url": "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+        "thumbnail_url": "https://img.youtube.com/vi/kqtD5dpn9C8/maxresdefault.jpg"
     },
     {
         "title": "Python Control Flow: If Statements and Loops",
