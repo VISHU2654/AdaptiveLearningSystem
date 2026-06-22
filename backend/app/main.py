@@ -114,7 +114,8 @@ async def health_check():
         redis_status = "connected"
         r.close()
     except Exception as e:
-        logger.error(f"Redis health check failed: {e}")
+        logger.warning(f"Redis not available: {e}")
+        redis_status = "disconnected"
 
     return {
         "status": "healthy" if db_status == "connected" and redis_status == "connected" else "degraded",

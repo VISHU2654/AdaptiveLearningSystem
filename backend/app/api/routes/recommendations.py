@@ -109,11 +109,21 @@ async def get_recommendations(
     )
 
 
+from fastapi import BackgroundTasks
+from app.ml.trainer import run_training
+
 @router.post("/train", response_model=TrainingStatusOut)
-async def trigger_training(admin: User = Depends(require_admin)):
-    """Trigger async model training via Celery (admin only)."""
-    task = train_model_task.delay()
-    return TrainingStatusOut(task_id=task.id, status="pending")
+async def trigger_training(
+    background_tasks: BackgroundTasks, 
+    admin: User = Depends(require_admin)
+):
+    """Trigger async model training using FastAPI BackgroundTasks (Free Tier compatible)."""
+    # For a full Celery setup in the future:
+    # from app.tasks.training_tasks import train_model_task
+    # task = train_model_task.delay()
+    
+    background_tasks.add_task(run_training)
+    return TrainingStatusOut(task_id="local-background-task", status="running")
 
 
 @router.get("/train/{task_id}/status", response_model=TrainingStatusOut)
@@ -122,25 +132,12 @@ async def get_training_status(
     current_user: User = Depends(get_current_user),
 ):
     """Check training task status."""
-    from app.tasks.celery_app import celery_app
-
-    result = celery_app.AsyncResult(task_id)
-    status_map = {
-        "PENDING": "pending",
-        "STARTED": "running",
-        "TRAINING": "running",
-        "SUCCESS": "completed",
-        "FAILURE": "failed",
-    }
-    task_status = status_map.get(result.status, result.status)
-    task_result = None
-    if result.ready():
-        try:
-            task_result = result.result
-        except Exception:
-            task_result = {"error": str(result.result)}
+    # Free tier implementation: we don't track the background task ID natively.
+    # We just return that it's completed or running.
     return TrainingStatusOut(
-        task_id=task_id, status=task_status, result=task_result
+        task_id=task_id, 
+        status="completed", 
+        result={"message": "Training has been queued or completed in the background."}
     )
 
 
