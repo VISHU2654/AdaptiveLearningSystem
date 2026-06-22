@@ -71,25 +71,47 @@ function CourseCard({ course, plan = 'free', onStartCourse }) {
       transition={{ duration: 0.28, ease: 'easeOut' }}
       className="group glass-card overflow-hidden rounded-xl transition-colors duration-300 hover:border-accent-300/40 hover:shadow-[0_24px_70px_rgba(8,145,178,0.18)]"
     >
-      <div className={`flex items-center justify-between bg-gradient-to-r ${gradient} px-5 py-4`}>
-        <div className="flex items-center space-x-2 text-white/90">
-          {icon}
-          <span className="text-sm font-medium capitalize">{course.content_type}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className={`rounded-full px-2 py-1 text-xs font-semibold ${
-            resource.premium ? 'bg-amber-950/40 text-amber-100' : 'bg-emerald-950/40 text-emerald-100'
-          }`}
-          >
-            {resource.premium ? 'Premium' : 'Free'}
-          </span>
-          {course.duration_minutes && (
-            <span className="rounded-full bg-black/20 px-2 py-1 text-xs text-white/75">
-              {course.duration_minutes} min
+      {course.thumbnail_url ? (
+        <div className="relative h-40 w-full overflow-hidden bg-slate-900">
+          <img src={course.thumbnail_url} alt={course.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div className="absolute right-3 top-3 flex items-center gap-2">
+            <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${
+              resource.premium ? 'bg-amber-950/90 text-amber-100 shadow-md' : 'bg-emerald-950/90 text-emerald-100 shadow-md'
+            }`}>
+              {resource.premium ? 'Premium' : 'Free'}
             </span>
+          </div>
+          <div className="absolute bottom-3 left-3 flex items-center space-x-2 rounded-full bg-slate-950/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-md backdrop-blur-md">
+             {icon}
+             <span className="capitalize">{course.content_type}</span>
+          </div>
+          {course.duration_minutes && (
+            <div className="absolute bottom-3 right-3 rounded-full bg-slate-950/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-md backdrop-blur-md">
+              {course.duration_minutes} min
+            </div>
           )}
         </div>
-      </div>
+      ) : (
+        <div className={`flex items-center justify-between bg-gradient-to-r ${gradient} px-5 py-4`}>
+          <div className="flex items-center space-x-2 text-white/90">
+            {icon}
+            <span className="text-sm font-medium capitalize">{course.content_type}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className={`rounded-full px-2 py-1 text-xs font-semibold ${
+              resource.premium ? 'bg-amber-950/40 text-amber-100' : 'bg-emerald-950/40 text-emerald-100'
+            }`}
+            >
+              {resource.premium ? 'Premium' : 'Free'}
+            </span>
+            {course.duration_minutes && (
+              <span className="rounded-full bg-black/20 px-2 py-1 text-xs text-white/75">
+                {course.duration_minutes} min
+              </span>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="p-5">
         <div className="mb-2 flex items-start justify-between gap-3">

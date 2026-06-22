@@ -138,7 +138,7 @@ function CoursePlayerModal({ course, plan, onClose, onUpgrade }) {
                     ) : (
                       <iframe
                         title={resource.title}
-                        src={resource.embedUrl}
+                        src={course.video_url ? course.video_url.replace('watch?v=', 'embed/') : resource.embedUrl}
                         className="h-full w-full"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
