@@ -87,7 +87,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Write if-else logic", "Implement for and while loops"],
         "prerequisites": [1], # Depends on Fundamentals
         "duration_minutes": 30,
-        "author": "Dr. Sarah Chen"
+        "author": "Dr. Sarah Chen",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Python Functions and Modules",
@@ -99,7 +100,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Create reusable functions", "Import external modules"],
         "prerequisites": [2], # Depends on Control Flow
         "duration_minutes": 60,
-        "author": "Prof. James Miller"
+        "author": "Prof. James Miller",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     
     # Python - Intermediate
@@ -113,7 +115,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Define Python classes", "Implement class inheritance"],
         "prerequisites": [3],
         "duration_minutes": 75,
-        "author": "Prof. James Miller"
+        "author": "Prof. James Miller",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     
     # JavaScript
@@ -127,7 +130,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Run JS in browser", "Select DOM elements"],
         "prerequisites": [],
         "duration_minutes": 50,
-        "author": "Mark Thompson"
+        "author": "Mark Thompson",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "React Fundamentals: Components and State",
@@ -139,7 +143,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Build React components", "Manage component state"],
         "prerequisites": [5],
         "duration_minutes": 120,
-        "author": "Emily Zhang"
+        "author": "Emily Zhang",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # ML & Data Science
@@ -153,7 +158,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Clean data with Pandas", "Perform basic aggregations"],
         "prerequisites": [1],
         "duration_minutes": 55,
-        "author": "Dr. Maria Rodriguez"
+        "author": "Dr. Maria Rodriguez",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Machine Learning 101: What Is ML?",
@@ -165,7 +171,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Distinguish ML types", "Identify ML use cases"],
         "prerequisites": [],
         "duration_minutes": 25,
-        "author": "Prof. Andrew Ng Jr."
+        "author": "Prof. Andrew Ng Jr.",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Advanced Recommendation Engines",
@@ -177,7 +184,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Implement DeepFM", "Build ensemble fusion layers"],
         "prerequisites": [8, 4],
         "duration_minutes": 180,
-        "author": "Prof. Andrew Ng Jr."
+        "author": "Prof. Andrew Ng Jr.",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # Java
@@ -191,7 +199,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Write basic Java programs", "Understand OOP fundamentals"],
         "prerequisites": [],
         "duration_minutes": 60,
-        "author": "Dr. Sarah Chen"
+        "author": "Dr. Sarah Chen",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Java Collections Framework",
@@ -203,7 +212,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Use ArrayList and HashMap", "Implement custom comparators"],
         "prerequisites": [10],
         "duration_minutes": 45,
-        "author": "Prof. James Miller"
+        "author": "Prof. James Miller",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Spring Boot REST API Development",
@@ -215,7 +225,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Create REST endpoints", "Implement Spring Security"],
         "prerequisites": [11],
         "duration_minutes": 150,
-        "author": "Emily Zhang"
+        "author": "Emily Zhang",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # C++
@@ -229,7 +240,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Declare and use pointers", "Understand stack vs heap"],
         "prerequisites": [],
         "duration_minutes": 55,
-        "author": "Mark Thompson"
+        "author": "Mark Thompson",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "C++ Object-Oriented Programming",
@@ -241,7 +253,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Implement class hierarchies", "Use virtual functions"],
         "prerequisites": [13],
         "duration_minutes": 70,
-        "author": "Prof. James Miller"
+        "author": "Prof. James Miller",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # Go
@@ -255,7 +268,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Write Go programs", "Implement concurrency patterns"],
         "prerequisites": [],
         "duration_minutes": 65,
-        "author": "Dr. Maria Rodriguez"
+        "author": "Dr. Maria Rodriguez",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Building Web Services with Go",
@@ -267,7 +281,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Build HTTP servers", "Handle JSON request/response"],
         "prerequisites": [15],
         "duration_minutes": 90,
-        "author": "Mark Thompson"
+        "author": "Mark Thompson",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # Rust
@@ -281,7 +296,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Manage ownership transfers", "Apply borrowing rules"],
         "prerequisites": [],
         "duration_minutes": 80,
-        "author": "Prof. Andrew Ng Jr."
+        "author": "Prof. Andrew Ng Jr.",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Systems Programming with Rust",
@@ -293,7 +309,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Build CLI applications", "Implement robust error handling"],
         "prerequisites": [17],
         "duration_minutes": 120,
-        "author": "Emily Zhang"
+        "author": "Emily Zhang",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # TypeScript
@@ -307,7 +324,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Define types and interfaces", "Use generics effectively"],
         "prerequisites": [5],
         "duration_minutes": 50,
-        "author": "Emily Zhang"
+        "author": "Emily Zhang",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Full-Stack TypeScript with React",
@@ -319,7 +337,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Build React apps with TypeScript", "Create typed APIs"],
         "prerequisites": [19],
         "duration_minutes": 140,
-        "author": "Mark Thompson"
+        "author": "Mark Thompson",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # SQL
@@ -333,7 +352,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Write complex SQL queries", "Perform data aggregations"],
         "prerequisites": [],
         "duration_minutes": 40,
-        "author": "Dr. Maria Rodriguez"
+        "author": "Dr. Maria Rodriguez",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
     {
         "title": "Database Design and Optimization",
@@ -345,7 +365,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Design normalized schemas", "Optimize slow queries"],
         "prerequisites": [21],
         "duration_minutes": 60,
-        "author": "Prof. James Miller"
+        "author": "Prof. James Miller",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # Kotlin
@@ -359,7 +380,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Write Kotlin programs", "Understand null safety"],
         "prerequisites": [],
         "duration_minutes": 55,
-        "author": "Dr. Sarah Chen"
+        "author": "Dr. Sarah Chen",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 
     # Swift
@@ -373,7 +395,8 @@ SAMPLE_CONTENT = [
         "learning_objectives": ["Build SwiftUI views", "Handle optionals safely"],
         "prerequisites": [],
         "duration_minutes": 50,
-        "author": "Emily Zhang"
+        "author": "Emily Zhang",
+        "thumbnail_url": "https://picsum.photos/400/225"
     },
 ]
 
