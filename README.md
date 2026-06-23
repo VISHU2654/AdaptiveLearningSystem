@@ -72,15 +72,24 @@ Demo login buttons bypass OTP only while `DEMO_AUTH_BYPASS_ENABLED=true`, so dem
 
 ### Email OTP Configuration
 
-Email sender settings are configured inside the app, not in `.env`.
+Email sender settings are configured inside the app via the Admin Dashboard, not in `.env`.
 
-1. Start the app.
-2. Click `Admin demo` on the login page.
-3. Open the user menu, then `Settings`.
-4. Enter the SMTP sender details and save. The app sends a test email immediately.
-5. For production, set `DEMO_AUTH_BYPASS_ENABLED=false`, change `SECRET_KEY`, and restart the containers.
+**⚠️ Important Note for Render Free Tier:**
+Render blocks standard outbound SMTP ports (25, 465, 587) on free accounts. You cannot use Gmail or standard SMTP servers. Instead, the backend is pre-configured to support the **Resend API**. 
 
-For Gmail, use a Google App Password instead of your normal account password. Registration sends an email verification OTP. Login verifies the password first, then sends a login OTP and issues the JWT only after the OTP is verified. OTPs are stored as bcrypt hashes and expire after 10 minutes.
+**To set up Resend:**
+1. Create a free account at [Resend](https://resend.com) and generate an API key.
+2. Log into the app using the `Admin demo` button.
+3. Open the user menu (bottom left), then click `Settings`.
+4. Enter the following details:
+   - **SMTP host:** `api.resend.com` *(This exact string triggers the Resend API bypass)*
+   - **Port:** `465`
+   - **From email:** `onboarding@resend.dev` *(Or your verified custom domain)*
+   - **App password:** `<Your Resend API Key>`
+   - **Test recipient:** The email address registered to your Resend account.
+5. Click Save. The app will verify the API key and send a test email.
+
+For production, set `DEMO_AUTH_BYPASS_ENABLED=false`, change your `SECRET_KEY`, and ensure you have verified a custom domain on Resend so you can send emails to any user. Registration sends an email verification OTP. Login verifies the password first, then sends a login OTP and issues the JWT only after the OTP is verified. OTPs are stored as bcrypt hashes and expire after 10 minutes.
 
 Demo controls are intentionally separate:
 - `Student demo` / `Admin demo` login use seeded demo accounts and skip OTP only for allowlisted emails in `DEMO_LOGIN_EMAILS`.
