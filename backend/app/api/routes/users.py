@@ -87,8 +87,7 @@ def _demo_bypass_enabled() -> bool:
 
 
 def _is_demo_login_user(user: User) -> bool:
-    # Allow ANY user to bypass OTP if demo bypass is enabled (helpful for Render free tier testing)
-    return _demo_bypass_enabled()
+    return _demo_bypass_enabled() and user.email.lower() in _demo_login_email_set()
 
 
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)
@@ -111,13 +110,6 @@ async def register(user_in: UserCreate, db: AsyncSession = Depends(get_db)):
         learning_goals=user_in.learning_goals,
         is_verified=False,
     )
-
-    if _demo_bypass_enabled():
-        user.is_verified = True
-        db.add(user)
-        await db.flush()
-        await db.refresh(user)
-        return user
 
     otp = _store_otp(user, OTP_PURPOSE_REGISTER)
 

@@ -82,14 +82,33 @@ def send_raw_email(
     msg.add_alternative(html_body, subtype="html")
 
     try:
-        with smtplib.SMTP(config["smtp_host"], config["smtp_port"], timeout=15) as server:
-            server.ehlo()
-            if config.get("smtp_use_tls", True):
-                server.starttls()
+        if config.get("smtp_host") == "api.resend.com":
+            # Bypass SMTP and use Resend HTTP API
+            import httpx
+            payload = {
+                "from": config.get("smtp_from_email") or config["smtp_user"],
+                "to": [to_email],
+                "subject": subject,
+                "text": plain_body,
+                "html": html_body,
+            }
+            headers = {
+                "Authorization": f"Bearer {config['smtp_password']}",
+                "Content-Type": "application/json",
+            }
+            with httpx.Client() as client:
+                res = client.post("https://api.resend.com/emails", json=payload, headers=headers, timeout=15)
+                res.raise_for_status()
+            return True
+        else:
+            with smtplib.SMTP(config["smtp_host"], config["smtp_port"], timeout=15) as server:
                 server.ehlo()
-            server.login(config["smtp_user"], config["smtp_password"])
-            server.send_message(msg)
-        return True
+                if config.get("smtp_use_tls", True):
+                    server.starttls()
+                    server.ehlo()
+                server.login(config["smtp_user"], config["smtp_password"])
+                server.send_message(msg)
+            return True
     except Exception as exc:
         logger.error("Failed to send email to {}: {}", to_email, exc)
         return False
